@@ -34,7 +34,7 @@ jobs:
         echo "PICO_SDK_PATH=$HOME/pico-sdk" >> $GITHUB_ENV
 
     - name: Checkout
-       uses: actions/checkout@v2
+      uses: actions/checkout@v2
        
     - name: Build Firmware
       run: |
