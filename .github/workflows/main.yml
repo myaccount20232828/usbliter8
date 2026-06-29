@@ -32,10 +32,7 @@ jobs:
         git checkout a1438dff1d38bd9c65dbd693f0e5db4b9ae91779
         git submodule update --init --recursive
         echo "PICO_SDK_PATH=$HOME/pico-sdk" >> $GITHUB_ENV
-
-    - name: Checkout
-      uses: actions/checkout@v2
-       
+        
     - name: Build Firmware
       run: |
         PICO_BOARD="waveshare_rp2350_usb_a"
