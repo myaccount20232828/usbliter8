@@ -33,12 +33,12 @@ jobs:
         git submodule update --init --recursive
         echo "PICO_SDK_PATH=$HOME/pico-sdk" >> $GITHUB_ENV
 
-    - name: Build USB Request Handlers
-      run: |
-        cd usb_req_handler
-        export TARGET=t8030 && make.sh
-        export TARGET=t8020 && make.sh
-        export TARGET=t8006 && make.sh
+    # - name: Build USB Request Handlers
+    #   run: |
+    #     cd usb_req_handler
+    #     export TARGET=t8030 && make.sh
+    #     export TARGET=t8020 && make.sh
+    #     export TARGET=t8006 && make.sh
         
     - name: Build Firmware
       run: |
