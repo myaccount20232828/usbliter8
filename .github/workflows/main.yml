@@ -32,6 +32,13 @@ jobs:
         git checkout a1438dff1d38bd9c65dbd693f0e5db4b9ae91779
         git submodule update --init --recursive
         echo "PICO_SDK_PATH=$HOME/pico-sdk" >> $GITHUB_ENV
+
+    - name: Build USB Request Handlers
+      run: |
+        cd usb_req_handler
+        export TARGET=t8030 && make.sh
+        export TARGET=t8020 && make.sh
+        export TARGET=t8006 && make.sh
         
     - name: Build Firmware
       run: |
@@ -47,4 +54,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: rp2350a-firmware
-        path: build/
+        path: build/usbliter8.uf2
